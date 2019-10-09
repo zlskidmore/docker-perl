@@ -31,6 +31,7 @@ RUN /bin/bash -c "source $HOME/perl5/perlbrew/etc/bashrc && perlbrew init && per
 
 # install cpanminus modules
 WORKDIR /usr/local/bin
+RUN /bin/bash -c "source $HOME/perl5/perlbrew/etc/bashrc && perlbrew init && perlbrew switch $perl_version && cpanm Getopt::Long"
 RUN /bin/bash -c "source $HOME/perl5/perlbrew/etc/bashrc && perlbrew init && perlbrew switch $perl_version && cpanm SOAP::Lite"
 RUN /bin/bash -c "source $HOME/perl5/perlbrew/etc/bashrc && perlbrew init && perlbrew switch $perl_version && cpanm YAML::Syck"
 RUN /bin/bash -c "source $HOME/perl5/perlbrew/etc/bashrc && perlbrew init && perlbrew switch $perl_version && cpanm XML::Simple"
